@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    background-color: bisque;
+    height: 200vh;
+
+}
+.contentBox{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+.leftBox{
+    width: 30vw;
+    height: 80vh;
+}
+main{
+    padding-top: 8vh;
+    height: 80vh;
+}
+.addUserButton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:saddlebrown ;
+    border: 2px saddlebrown solid;
+    color: bisque;
+    cursor: pointer;
+}
+.photoBlock{
+    padding: 8vh 0;
+    width: 100%;
+    margin: 0;
+    display: flex;
+justify-content: center;
+
+}
+.photoBlock img{
+    width: 20vw;
+    border-radius:50%;
+    background-color: bisque;
+    border: 2px saddlebrown solid;
+}
+.postOfCurrentUser{
+    margin:0 4vw;
+    width: 90vw;
+    border-radius: 10px;
+    background-color:saddlebrown ;
+    border: 2px saddlebrown solid;
+    color: bisque;
+    cursor: pointer;
+}
+.postsBlock{
+    padding-top: 20vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5,1fr);
+    grid-gap: 3vh;
+}
