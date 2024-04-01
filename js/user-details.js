@@ -22,20 +22,23 @@ postOfCurrentUser.addEventListener('click', function () {
     fetch(`https://jsonplaceholder.typicode.com/users/${params}/posts`).then(value => value.json()).then(value => {
         for (const valueElement of value) {
             let postElement = document.createElement('div');
+            let buttonBlock=document.createElement('div');
             let postLink=document.createElement('a');
             let postButton = document.createElement('button');
-            let valueTextBox = document.createElement('div');
-
+            let textBox = document.createElement('div');
+            textBox.className='textBox';
             postElement.className='postElement';
+            buttonBlock.className='buttonBlock';
             postButton.className = 'postButton';
             postButton.innerText = 'Go to Post';
             postLink.appendChild(postButton);
 
 
-            valueTextBox.innerText = `${valueElement.title}`;
+            textBox.innerText = `${valueElement.title}`;
             postLink.href=`post-details.html?postId=${valueElement.id}`;
-            postElement.appendChild(valueTextBox);
-            postElement.appendChild(postLink);
+            buttonBlock.appendChild(postLink)
+            postElement.appendChild(textBox);
+            postElement.appendChild(buttonBlock);
             postsBlock.appendChild(postElement)
         }
     })
@@ -44,7 +47,7 @@ postOfCurrentUser.addEventListener('click', function () {
 
 addUserButton.className = 'addUserButton';
 addUserButton.innerText = 'Add to Friends';
-photoBlock.innerHTML = `<img src="images/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" alt="photo"/>`;
+photoBlock.innerHTML = `<img src="../images/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" alt="photo"/>`;
 photoBlock.className = 'photoBlock';
 
 leftBox.appendChild(photoBlock);

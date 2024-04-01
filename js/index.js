@@ -16,9 +16,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             userLink.classList=['button'];
 
             userBlock.method = 'post';
-            userLink.href = `user-details.html?userId=${id}`;
+            userLink.href = `pages/user-details.html?userId=${id}`;
 
-            userPhoto.innerHTML = `<img src="images/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" alt="profilePhoto" class="photo"/>`;
+            userPhoto.innerHTML = `<img src="../images/360_F_64672736_U5kpdGs9keUll8CRQ3p3YaEv2M6qkVY5.jpg" alt="profilePhoto" class="photo"/>`;
             userName.innerText = `${id}. ${name}`;
             userButton.innerText = 'View Profile';
 

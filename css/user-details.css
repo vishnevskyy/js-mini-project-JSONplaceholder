@@ -55,5 +55,30 @@ justify-content: center;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr 1fr;
     grid-gap: 3vh;
+}
+.postElement{
+    border: 2px saddlebrown solid;
+    padding: 5%;
+    box-sizing: border-box;
+    display: grid;
+    height: 100%;
+    border-radius: 10%;
+}
+.buttonBlock{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.buttonBlock button{
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color:saddlebrown ;
+    border: 2px saddlebrown solid;
+    color: bisque;
+    cursor: pointer;
+}
+.textBox{
+    text-align: center;
 }

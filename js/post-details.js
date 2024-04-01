@@ -4,24 +4,27 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${params}`).then(value => valu
     createComments(value.id)
 })
 function createPost(value){
-    let mainBlock=document.createElement('div');
+    let postBlock=document.createElement('div');
     let textBlock=document.createElement('div');
     textBlock.innerText=`Id - ${value.id}\n userId - ${value.userId}\n title - ${value.title}\n body - ${value.body}`
-    mainBlock.appendChild(textBlock)
-    document.body.appendChild(mainBlock)
+    postBlock.className='postBlock'
+    postBlock.appendChild(textBlock)
+    document.body.appendChild(postBlock)
 }
 function createComments(params) {
-    let mainBlock=document.createElement('div');
+    let commentsBlock=document.createElement('div');
+    commentsBlock.className='commentsBlock'
     fetch(`https://jsonplaceholder.typicode.com/posts/${params}/comments`).then(value => value.json()).then(value => {
         for (const valueElement of value) {
             let commentElement= document.createElement('div');
-            mainBlock.appendChild(commentElement);
+            commentsBlock.appendChild(commentElement);
             for (const valueText in valueElement) {
                 let valueTextBox= document.createElement('div');
                 valueTextBox.innerText=`${valueText.charAt(0).toUpperCase()}${valueText.slice(1).replace(/([A-Z])/g, ' $1')}  - ${valueElement[valueText]}`
                 commentElement.appendChild(valueTextBox);
+                commentElement.className='commentElement'
             }
         }
     })
-    document.body.appendChild(mainBlock)
+    document.body.appendChild(commentsBlock)
 }
